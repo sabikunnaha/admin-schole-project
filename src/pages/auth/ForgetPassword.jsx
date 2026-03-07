@@ -3,8 +3,7 @@ import formLogo from "../../assets/images/form-logo.jpg";
 import { Link } from "react-router";
 
 
-const Login = () => {
-
+const ForgetPassword = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [idNumber, setIdNumber] = useState("");
     const [password, setPassword] = useState("");
@@ -69,11 +68,11 @@ const Login = () => {
                             />
                         </div>
 
-                        {/* Password */}
+                        {/* Email or Phone */}
                         <div className="mb-6 relative">
                             <input
                                 type={showPassword ? "text" : "password"}
-                                placeholder="Password"
+                                placeholder="Email or Phone"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                                 onFocus={() => setFocused("pw")}
@@ -109,7 +108,7 @@ const Login = () => {
 
                         {/* Buttons Row */}
                         <div className="flex gap-3 mb-6">
-                            <button
+                            <Link to={'forget'}
                                 type="button"
                                 className="flex-1 h-[39px] py-2 font-semibold text-white text-sm"
                                 style={{
@@ -122,8 +121,8 @@ const Login = () => {
                                 onMouseDown={e => e.currentTarget.style.transform = "scale(0.97)"}
                                 onMouseUp={e => e.currentTarget.style.transform = "scale(1)"}
                             >
-                                Forget
-                            </button>
+                                Login
+                            </Link>
                             <button
                                 type="submit"
                                 className="flex-1 py-2 h-[39px] font-semibold text-white text-sm flex items-center justify-center gap-2"
@@ -162,5 +161,4 @@ const Login = () => {
         </div>
     );
 };
-
-export default Login;
+export default ForgetPassword;
