@@ -1,19 +1,22 @@
-
 import { NavLink, Outlet, useLocation } from "react-router-dom";
-import FormLogo from "../../components/ui/FormLogo";
+import FormLogo from "../../../components/ui/FormLogo";
+
+
 const Register = ({ submitted }) => {
 
     const location = useLocation();
     const isAdmission = location.pathname === "/register/admission";
+
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50">
 
             {/* Card */}
-            <div className="relative w-full max-w-md bg-white shadow-lg px-8 pt-12 pb-4 mt-16 mb-4 animate-fade-in-up transition-all duration-300 hover:scale-[1.01]">
+            <div className="relative w-full max-w-md bg-white shadow-lg px-8 pt-12 pb-4 mt-16 mb-4   ">
 
                 {/* Logo */}
                 <div className="flex justify-center mb-6">
-                    <FormLogo />
+                    <FormLogo></FormLogo>
                 </div>
 
                 {/* Tabs */}
@@ -24,7 +27,7 @@ const Register = ({ submitted }) => {
                             to="/register"
                             end
                             className={({ isActive }) =>
-                                `flex-1 text-center h-8 leading-8 text-sm font-semibold transition
+                                `flex-1 text-center h-[39px] flex items-center justify-center text-sm font-semibold transition
                 ${isActive
                                     ? "bg-green-400 hover:bg-green-700 text-white"
                                     : "bg-purple-500 hover:bg-purple-700 text-white"
@@ -37,7 +40,7 @@ const Register = ({ submitted }) => {
                         <NavLink
                             to="/register/admission"
                             className={({ isActive }) =>
-                                `flex-1 text-center h-8 leading-8 text-sm font-semibold transition
+                                `flex-1 text-center h-[39px] flex items-center justify-center text-sm font-semibold transition
                 ${isActive
                                     ? "bg-green-400 hover:bg-green-700 text-white"
                                     : "bg-purple-500 hover:bg-purple-700 text-white"

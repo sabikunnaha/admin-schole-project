@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { TfiGallery } from "react-icons/tfi";
-import Input from "./formFields/Input";
-import Button from "./Button";
+import Input from "../../../components/ui/formFields/Input";
+import Button from "../../../components/ui/Button";
+import Select from "../../../components/ui/formFields/Select";
 
-const SchoolForm = () => {
+const SchoolRegiForm = () => {
 
     const navigate = useNavigate();
 
@@ -144,12 +145,12 @@ const SchoolForm = () => {
 
     return (
         <>
-            <form className="space-y-4" onSubmit={handleSubmit}>
+            <form className="space-y-4 px-5" onSubmit={handleSubmit}>
                 <Input label="School name" name="schoolName" value={formData.schoolName} onChange={handleChange} />
 
                 {/* dropdrawn */}
                 <div className="space-y-4">
-                    <Input
+                    <Select
                         type="select"
                         label="Division"
                         name="division"
@@ -158,7 +159,7 @@ const SchoolForm = () => {
                         options={["Dhaka", "Chattogram"]}
                     />
 
-                    <Input
+                    <Select
                         type="select"
                         label="District"
                         name="district"
@@ -167,7 +168,7 @@ const SchoolForm = () => {
                         options={["Gazipur", "Comilla"]}
                     />
 
-                    <Input
+                    <Select
                         type="select"
                         label="Upazila"
                         name="upazila"
@@ -210,19 +211,19 @@ const SchoolForm = () => {
 
                 {/* Select Subscription Plan */}
 
-                <h2 className="text-gray-500 text-[12px] border-b-[1px]">SELECT SUBSCRIPTION PLAN</h2>
-                
+                <h2 className="text-gray-500 text-[12px] border-b-[1px]">Select Subscription Plan</h2>
+
                 <div className="space-y-4">
-                    <Input
+                    <Select
                         type="select"
                         label="Select package"
                         name="select package"
                         value={formData.district}
                         onChange={handleChange}
-                        options={["Select package", "Basic", "Standad", "primiam",  "Advance"]}
+                        options={["Select package", "Basic", "Standad", "primiam", "Advance"]}
                     />
 
-                    <Input
+                    <Select
                         type="select"
                         label="Duration"
                         name="duration"
@@ -231,6 +232,12 @@ const SchoolForm = () => {
                         options={["2 Month", "3 Month", "4 Month"]}
                     />
 
+                </div>
+
+
+                <div className="text-[12px] text-gray-500 p-2 border-dashed border-2">
+                    <p>Total Parice: 0 TK</p>
+                    <p>Discount Parice: 0 TK</p>
                 </div>
 
                 {/* Upload */}
@@ -297,10 +304,7 @@ const SchoolForm = () => {
 
                 {/* Pricing */}
 
-                <div className="text-[12px] text-gray-500 p-2 shadow">
-                    <p>Total Parice: 0 TK</p>
-                    <p>Discount Parice: 0 TK</p>
-                </div>
+                
 
                 <Button
                     type="submit"
@@ -335,4 +339,4 @@ const SchoolForm = () => {
     );
 };
 
-export default SchoolForm;
+export default SchoolRegiForm;
