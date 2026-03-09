@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { TfiGallery } from "react-icons/tfi";
 import { useTheme } from "../../../contexts/ThemeContext";
 import Input from "../formFields/Input";
+import Select from "../formFields/Select";
 
 const Step4 = ({ formData, handleChange }) => {
 
@@ -39,7 +40,7 @@ const Step4 = ({ formData, handleChange }) => {
     }, []);
     return (
         <div
-            className={`space-y-4 animate-fadeIn ${darkMode ? "text-gray-200" : "text-gray-700"}`}
+            className={`space-y-6 animate-fadeIn ${darkMode ? "text-gray-200" : "text-gray-700"}`}
         >
             <p
                 className={`text-xs text-center ${darkMode ? "text-gray-400" : "text-gray-500"}`}
@@ -212,14 +213,14 @@ const Step4 = ({ formData, handleChange }) => {
 // LocationSelect Component using Input
 function LocationSelect({ darkMode, title, formData, handleChange, fields }) {
     return (
-        <div className="space-y-4 ">
+        <div className="space-y-6">
             <h2
                 className={`text-center font-semibold text-base md:text-lg ${darkMode ? "text-gray-300" : "text-gray-600"}`}
             >
                 {title}
             </h2>
             {fields.map(({ name, label, type = "select", options }) => (
-                <Input
+                <Select
                     key={name}
                     type={type}
                     label={label}

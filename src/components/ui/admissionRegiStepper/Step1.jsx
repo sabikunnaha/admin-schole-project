@@ -84,7 +84,7 @@ useEffect(() => {
                     </h2>
 
                     {/* Location selects */}
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                         <Select
                             type="select"
                             label="Division"
@@ -141,7 +141,7 @@ useEffect(() => {
                 </h2>
             )}
 
-            <div className="space-y-4">
+            <div className="space-y-7">
                 {!hideSchoolAndTitle && (
                     <Select
                         type="select"

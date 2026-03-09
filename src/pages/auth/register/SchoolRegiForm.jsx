@@ -145,7 +145,7 @@ const SchoolRegiForm = () => {
 
     return (
         <>
-            <form className="space-y-4 px-5" onSubmit={handleSubmit}>
+            <form className="space-y-6 px-5" onSubmit={handleSubmit}>
                 <Input label="School name" name="schoolName" value={formData.schoolName} onChange={handleChange} />
 
                 {/* dropdrawn */}
@@ -235,7 +235,7 @@ const SchoolRegiForm = () => {
                 </div>
 
 
-                <div className="text-[12px] text-gray-500 p-2 border-dashed border-2">
+                <div className="text-[12px] text-gray-500 p-2 border-dashed border">
                     <p>Total Parice: 0 TK</p>
                     <p>Discount Parice: 0 TK</p>
                 </div>
@@ -314,12 +314,14 @@ const SchoolRegiForm = () => {
                 </Button>
             </form>
 
-            <p className="text-center border border-gray-300 text-sm  h-[39px] leading-8 text-gray-600 mt-9">
+          <div className="px-5">
+              <p className="text-center border border-gray-300 text-sm  h-[39px] leading-8 text-gray-600 px-8 mt-9">
                 Already have an account?
                 <Link to="/" className="text-indigo-600 font-semibold ml-1 hover:underline">
                     Sign In
                 </Link>
             </p>
+          </div>
 
             <style>{`
         .input {

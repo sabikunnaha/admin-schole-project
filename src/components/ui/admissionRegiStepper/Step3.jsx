@@ -1,5 +1,6 @@
 import { useTheme } from "../../../contexts/ThemeContext";
 import Input from "../formFields/Input";
+import Select from "../formFields/Select";
 
 
 const Step3 = ({ formData, handleChange }) => {
@@ -56,7 +57,7 @@ const Step3 = ({ formData, handleChange }) => {
                         options: ["Savar", "Sonargaon"],
                     },
                 ].map(({ name, label, options }) => (
-                    <Input
+                    <Select
                         key={name}
                         type="select"
                         label={label}

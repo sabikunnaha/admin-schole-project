@@ -9,7 +9,7 @@ const Register = ({ submitted }) => {
 
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="min-h-screen flex items-center justify-center bg-gray-50 ">
 
             {/* Card */}
             <div className="relative w-full max-w-md bg-white shadow-lg px-8 pt-12 pb-4 mt-16 mb-4   ">
@@ -21,7 +21,7 @@ const Register = ({ submitted }) => {
 
                 {/* Tabs */}
                 {!submitted && (
-                    <div className="flex w-full gap-4 mb-6">
+                    <div className="flex w-full  px-5 gap-4 mb-6">
 
                         <NavLink
                             to="/register"
@@ -29,8 +29,8 @@ const Register = ({ submitted }) => {
                             className={({ isActive }) =>
                                 `flex-1 text-center h-[39px] flex items-center justify-center text-sm font-semibold transition
                 ${isActive
-                                    ? "bg-green-400 hover:bg-green-700 text-white"
-                                    : "bg-purple-500 hover:bg-purple-700 text-white"
+                                    ? "bg-blue-600 text-white"
+                                    : "border-2 border-blue-600  text-gray-700"
                                 }`
                             }
                         >
@@ -42,8 +42,8 @@ const Register = ({ submitted }) => {
                             className={({ isActive }) =>
                                 `flex-1 text-center h-[39px] flex items-center justify-center text-sm font-semibold transition
                 ${isActive
-                                    ? "bg-green-400 hover:bg-green-700 text-white"
-                                    : "bg-purple-500 hover:bg-purple-700 text-white"
+                                    ? "bg-blue-600 text-white"
+                                    : "border-2 border-blue-600  text-gray-700"
                                 }`
                             }
                         >
@@ -55,13 +55,13 @@ const Register = ({ submitted }) => {
 
                 {/* Title */}
                 {!isAdmission && (
-                    <h2 className="text-base md:text-xl text-slate-600 font-bold text-center mb-6">
+                    <h2 className="text-base md:text-xl text-slate-600 font-bold text-center mb-6 ">
                         New School Registration
                     </h2>
                 )}
 
                 {/* Form */}
-                <div className="space-y-4">
+                <div className="space-y-6">
                     <Outlet />
                 </div>
 

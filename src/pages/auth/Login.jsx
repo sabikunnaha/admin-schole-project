@@ -107,7 +107,7 @@ export default function Login() {
     setStep("login");
   };
 
-  const cardClasses = "bg-white shadow-lg px-10 py-12 animate-fade-in-up relative my-20";
+  const cardClasses = "bg-white shadow-lg px-10 py-10 animate-fade-in-up relative my-20";
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-5">
@@ -162,7 +162,7 @@ export default function Login() {
 
 
           {/* ===== REGISTER LINK ===== */}
-          <p className="h-8 border border-gray-300 flex items-center justify-center text-sm text-gray-500 mt-6">
+          <p className="h-[39px] border border-gray-300 flex items-center justify-center text-sm text-gray-500 mt-6">
             <Link to="register">
               Don’t have an account?{" "}
               <span className="text-blue-600 font-semibold ml-1">Register</span>
@@ -173,17 +173,17 @@ export default function Login() {
           <div className="mt-4 text-center">
             <div class="flex items-center pt-4 space-x-1">
               <div class="flex-1 h-px sm:w-12 dark:bg-gray-300"></div>
-              <p class="px-3 text-sm dark:text-gray-400">Join with uss</p>
+              <p class="px-3 text-sm dark:text-gray-400">Join with us</p>
               <div class="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
             </div>
             <div className="flex justify-center gap-2">
-              <div className="text-blue-600 text-2xl p-1 md:p-2 rounded-full ">
+              <div className="text-blue-600 text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border rounded-full ">
                 <FaFacebookF />
               </div>
-              <div className="text-green-500  text-2xl p-1 md:p-2 rounded-full ">
+              <div className="text-green-500  text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border rounded-full ">
                 <FaWhatsapp />
               </div>
-              <div className="text-gray-700 text-2xl p-1 md:p-2 rounded-full ">
+              <div className="text-gray-700 text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border  rounded-full ">
                 <BiSupport />
               </div>
             </div>

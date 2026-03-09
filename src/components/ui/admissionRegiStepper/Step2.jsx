@@ -1,5 +1,6 @@
 import { useTheme } from "../../../contexts/ThemeContext";
 import Input from "../formFields/Input";
+import Select from "../formFields/Select";
 
 
 const Step2 = ({ formData, handleChange }) => {
@@ -23,9 +24,9 @@ const Step2 = ({ formData, handleChange }) => {
                 { label: "Group ", name: "groupName" },
                 { label: "Section", name: "sectionName" },
                 { label: "Session ", name: "sessionYear" },
-                { label: "Interview code", name: "interviewCode" },
+                { label: "Result", name: "result" },
             ].map((field) => (
-                <Input
+                <Select
                     key={field.name}
                     label={field.label}
                     name={field.name}

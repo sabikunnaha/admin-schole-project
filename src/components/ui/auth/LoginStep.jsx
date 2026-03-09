@@ -10,7 +10,7 @@ const LoginStep = ({ formData, setFormData, errors, handleLogin, togglePassword,
      return (
     <div>
       <h2 className="text-lg font-bold text-gray-600 text-center mb-6">Login</h2>
-      <form onSubmit={handleLogin} className="space-y-4">
+      <form onSubmit={handleLogin} className="space-y-6">
         <div className="relative">
           <Input name="idNumber" label="ID Number" value={formData.idNumber} onChange={handleChange} />
           {errors.idNumber && <p className="text-xs text-red-500 mt-1">{errors.idNumber}</p>}

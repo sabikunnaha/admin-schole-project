@@ -250,7 +250,7 @@ const AdmissionRegiForm = () => {
                     <>
                         <Link
                             to="/"
-                            className="w-1/2 bg-blue-600 text-white text-sm h-8 flex items-center justify-center hover:bg-slate-800"
+                            className="w-1/2 bg-blue-600 text-white text-sm h-[39px] flex items-center justify-center hover:bg-slate-800"
                         >
                             Login
                         </Link>
