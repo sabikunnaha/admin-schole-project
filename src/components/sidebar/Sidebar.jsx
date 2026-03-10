@@ -5,9 +5,9 @@ import SidebarItem from "./SidebarItem";
 import { useSidebar } from "../../contexts/SidebarContext";
 import { useTheme } from "../../contexts/ThemeContext";
 import { sidebarMenu } from ".";
+// import ResetModal from "../modal/ResetModal";
+// import CashInModal from "../modal/CashInModal";
 
-// import ResetModal from "./ResetModal";
-// import CashInModal from "../components/account/CashInModal";
 
 const SIDEBAR_WIDTH = "w-64";
 const SIDEBAR_COLLAPSED_WIDTH = "w-24";
@@ -97,7 +97,7 @@ export default function Sidebar() {
           {/* Desktop Toggle */}
           <button
             onClick={toggleSidebar}
-            className="hidden md:block text-xl"
+            className="hidden md:block text-xl text-gray-700"
           >
             {open ? "×" : "☰"}
           </button>
@@ -113,11 +113,11 @@ export default function Sidebar() {
 
         {/* Menu */}
         <div
-          className={`pt-3 pb-12 space-y-2 overflow-y-auto h-[calc(100vh-64px)]
+          className={`pt-3 pb-12 space-y-2 overflow-y-auto h-[calc(100vh-64px) ]
           ${isExpanded ? "px-6" : "px-4"}`}
         >
           {menuItems.map((section) => (
-            <SidebarItem
+            <SidebarItem 
               key={section.title}
               item={section}
               desktopCollapsed={!isExpanded}

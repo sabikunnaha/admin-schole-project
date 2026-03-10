@@ -44,10 +44,10 @@ export function SidebarProvider({ children }) {
   return (
     <SidebarContext.Provider
       value={{
-        isSidebarOpen,
-        isHovered,
-        setIsHovered,
-        isMobileSidebarOpen,
+        open: isSidebarOpen,
+        hovered: isHovered,
+        setHovered: setIsHovered,
+        mobileOpen: isMobileSidebarOpen,
         toggleSidebar,
         toggleMobileSidebar,
       }}

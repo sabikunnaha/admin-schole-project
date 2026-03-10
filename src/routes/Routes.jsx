@@ -4,6 +4,7 @@ import Register from "../pages/auth/register/Register.jsx";
 import SchoolRegiForm from "../pages/auth/register/SchoolRegiForm.jsx";
 import AdmissionRegiForm from "../pages/auth/register/AdmissionRegiForm.jsx";
 import DashboardLayout from "../layouts/DashboardLayout.jsx";
+import SchoolDashboard from "../pages/school/SchoolDashboard.jsx";
 
 
 
@@ -33,5 +34,10 @@ export const router = createBrowserRouter([
   {
     path: "/school/dashboard",
     element: <DashboardLayout />,
+    children: [
+      {
+        index: true, element: <SchoolDashboard></SchoolDashboard>
+      }
+    ]
   }
 ]);

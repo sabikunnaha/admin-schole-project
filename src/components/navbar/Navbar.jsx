@@ -227,9 +227,9 @@ const Navbar = () => {
           className="p-2 border rounded-full flex items-center justify-center hover:bg-gray-100"
         >
           {darkMode ? (
-            <FiSun className=" w-3 h-3 md:w-5 md:h-5" />
+            <FiSun className=" w-3 h-3 md:w-4 md:h-4" />
           ) : (
-            <FiMoon className="w-3 h-3 md:w-5 md:h-5" />
+            <FiMoon className="w-3 h-3 md:w-4 md:h-4" />
           )}
         </button>
 
@@ -239,7 +239,7 @@ const Navbar = () => {
             onClick={() => toggleDropdown("notifications")}
             className="border rounded-full p-2 relative  hover:bg-gray-100"
           >
-            <FiBell className="w-3 h-3 md:w-5 md:h-5" />
+            <FiBell className="w-3 h-3 md:w-4 md:h-4" />
             {notifications.length > 0 && (
               <span className="absolute -top-1 -right-1 text-[10px] bg-red-500 text-white px-1 rounded">
                 {notifications.length}
@@ -259,7 +259,7 @@ const Navbar = () => {
                   : "bg-white border border-gray-200 text-gray-700 shadow-lg"
               } px-4 py-4 z-50 w-72 flex flex-col max-h-[80vh] overflow-y-auto`}
             >
-              <div className="font-semibold  text-center mb-3   pb-2">
+              <div className="font-semibold  text-center mb-3 pb-2">
                 Notifications
               </div>
 
@@ -274,7 +274,7 @@ const Navbar = () => {
                       <img
                         src={notif.avatar}
                         alt={notif.name}
-                        className="w-10 h-10 rounded-full object-cover"
+                        className="w-8 h-8 rounded-full object-cover"
                       />
                       <div className="flex flex-col text-left">
                         <span className="font-semibold ">{notif.name}</span>

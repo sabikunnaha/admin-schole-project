@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
@@ -16,6 +16,8 @@ const  SidebarItem=({
     const [open, setOpen] = useState(false);
 
     const Icon = item.icon;
+
+    console.log(item)
 
     const collapsed = desktopCollapsed && !forceExpand;
     const showText = !collapsed;
@@ -55,7 +57,7 @@ const  SidebarItem=({
         return (
             <div>
                 {/* Parent */}
-                <button
+                <Link to={item.path}
                     type="button"
                     onClick={handleParentClick}
                     className={`flex items-center ${showText ? "justify-start" : "justify-center"
@@ -66,7 +68,7 @@ const  SidebarItem=({
                 >
                     {Icon && (
                         <span
-                            className={`inline-flex items-center justify-center rounded p-1 ${darkMode ? "bg-gray-700" : "bg-gray-200"
+                            className={`inline-flex items-center justify-center rounded  rounded-full p-1 ${darkMode ? "bg-gray-700" : "bg-gray-200"
                                 }`}
                         >
                             <Icon
@@ -93,7 +95,7 @@ const  SidebarItem=({
                             />
                         </>
                     )}
-                </button>
+                </Link>
 
                 {/* Children */}
                 {showText && open && (

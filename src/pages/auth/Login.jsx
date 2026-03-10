@@ -8,6 +8,18 @@ import OtpStep from "../../components/ui/auth/OtpStep";
 import ResetStep from "../../components/ui/auth/ResetStep";
 import { BiSupport } from "react-icons/bi";
 
+
+const loginUser = (data) => {
+  const { idNumber, password } = data;
+
+  if (idNumber === "A001" && password === "123456") return "admin";
+  if (idNumber === "T001" && password === "123456") return "teacher";
+  if (idNumber === "S001" && password === "123456") return "school";
+  if (idNumber === "SC001" && password === "123456") return "student";
+
+  throw new Error("Invalid ID or Password");
+};
+
 export default function Login() {
   const navigate = useNavigate();
 

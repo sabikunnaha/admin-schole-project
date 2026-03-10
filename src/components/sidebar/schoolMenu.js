@@ -7,7 +7,7 @@ import { RiAccountPinBoxLine } from "react-icons/ri";
 import { BiReset, BiSolidCalendarExclamation } from "react-icons/bi";
 
 export const schoolMenu = [
-  { title: "Dashboard", icon: LuLayoutDashboard, path: "school/dashboard" },
+  { title: "Dashboard", icon: LuLayoutDashboard, path: "/dashboard" },
 
   {
     title: "Teacher",
