@@ -55,12 +55,12 @@ export default function FeeStatistics() {
 
   return (
     <div
-      className={`shadow p-4 md:p-6 space-y-6 rounded-lg
+      className={`shadow p-4 md:p-6 space-y-6 
         ${darkMode ? "bg-gray-900 text-gray-200" : "bg-white text-gray-900"}
       `}
     >
       {/* HEADER */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3">
         <h2 className="font-semibold text-sm md:text-lg">
           Fee Statistics
         </h2>
@@ -71,7 +71,7 @@ export default function FeeStatistics() {
           <button
             onClick={() => setOpen(!open)}
             className={`flex items-center justify-between gap-2
-              min-w-[200px] px-4 py-2 rounded-lg border text-sm transition
+              min-w-[140px] px-2 py-2 border text-sm transition
               ${darkMode
                 ? "bg-gray-800 border-gray-700 hover:bg-gray-700"
                 : "bg-white border-gray-300 hover:bg-gray-50"

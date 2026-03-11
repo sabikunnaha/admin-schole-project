@@ -9,7 +9,7 @@ const LoginStep = ({ formData, setFormData, errors, handleLogin, togglePassword,
       const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
      return (
     <div>
-      <h2 className="text-lg font-bold text-gray-600 text-center mb-6">Login</h2>
+      
       <form onSubmit={handleLogin} className="space-y-6">
         <div className="relative">
           <Input name="idNumber" label="ID Number" value={formData.idNumber} onChange={handleChange} />

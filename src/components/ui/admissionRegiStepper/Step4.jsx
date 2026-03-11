@@ -154,17 +154,7 @@ const Step4 = ({ formData, handleChange }) => {
                             }`}
                     />
 
-                    <span
-                        onClick={() =>
-                            setShowPassword((prev) => ({
-                                ...prev,
-                                [name]: !prev[name],
-                            }))
-                        }
-                        className="absolute right-3 top-2.5 cursor-pointer text-gray-500"
-                    >
-                        {showPassword[name] ? <FaEyeSlash /> : <FaEye />}
-                    </span>
+                  
                 </div>
             ))}
 

@@ -119,13 +119,16 @@ export default function Login() {
     setStep("login");
   };
 
-  const cardClasses = "bg-white shadow-lg px-10 py-10 animate-fade-in-up relative my-20";
+  const cardClasses = "bg-white shadow-lg px-10 pt-10 pb-4 animate-fade-in-up relative my-20";
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-5">
       <div className="max-w-[400px] w-full">
+
         <div className={cardClasses}>
           <FormLogo />
+
+          <h2 className="text-lg font-bold text-gray-600 text-center my-6">Login</h2>
 
           {step === "login" && (
             <LoginStep
@@ -174,10 +177,13 @@ export default function Login() {
 
 
           {/* ===== REGISTER LINK ===== */}
-          <p className="h-[39px] border border-gray-300 flex items-center justify-center text-sm text-gray-500 mt-6">
-            <Link to="register">
-              Don’t have an account?{" "}
-              <span className="text-blue-600 font-semibold ml-1">Register</span>
+          <p className="w-full max-w-sm mx-auto h-[39px] border border-gray-300 flex items-center justify-center md:text-sm text-xs text-gray-500 mt-6 px-2 text-center">
+            Don’t have an account?
+            <Link
+              to="register"
+              className="text-blue-600 font-semibold ml-1 hover:underline"
+            >
+              Register
             </Link>
           </p>
 
@@ -188,7 +194,7 @@ export default function Login() {
               <p class="px-3 text-sm dark:text-gray-400">Join with us</p>
               <div class="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
             </div>
-            <div className="flex justify-center gap-2">
+            <div className="flex  items-center justify-between mt-4 gap-2">
               <div className="text-blue-600 text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border rounded-full ">
                 <FaFacebookF />
               </div>

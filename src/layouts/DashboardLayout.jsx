@@ -56,7 +56,7 @@ export default function DashboardLayout() {
         <main
           className={`flex-1 overflow-y-auto ${
             shouldShowTopNavbar ? "pt-16" : ""
-          } pb-2 px-2 md:px-4
+          } pb-2
           ${
             darkMode
               ? "bg-gray-800 text-gray-200"

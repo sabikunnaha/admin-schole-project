@@ -315,9 +315,9 @@ const SchoolRegiForm = () => {
             </form>
 
           <div className="px-5">
-              <p className="text-center border border-gray-300 text-sm  h-[39px] leading-8 text-gray-600 px-8 mt-9">
+              <p className="text-center border border-gray-300 md:text-sm text-xs  h-[39px] leading-8 text-gray-600 px-3 mt-9">
                 Already have an account?
-                <Link to="/" className="text-indigo-600 font-semibold ml-1 hover:underline">
+                <Link to="/" className="text-indigo-600  font-semibold ml-1 hover:underline">
                     Sign In
                 </Link>
             </p>

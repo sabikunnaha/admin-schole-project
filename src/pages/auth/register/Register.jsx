@@ -30,7 +30,7 @@ const Register = ({ submitted }) => {
                                 `flex-1 text-center h-[39px] flex items-center justify-center text-sm font-semibold transition
                 ${isActive
                                     ? "bg-blue-600 text-white"
-                                    : "border-2 border-blue-600  text-gray-700"
+                                    : "border-1 border-blue-600  text-gray-700"
                                 }`
                             }
                         >
@@ -43,7 +43,7 @@ const Register = ({ submitted }) => {
                                 `flex-1 text-center h-[39px] flex items-center justify-center text-sm font-semibold transition
                 ${isActive
                                     ? "bg-blue-600 text-white"
-                                    : "border-2 border-blue-600  text-gray-700"
+                                    : "border-1 border-blue-600  text-gray-700"
                                 }`
                             }
                         >
