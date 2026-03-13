@@ -192,7 +192,7 @@ export default function TopNavbar() {
 
   return (
     <nav
-      className={`fixed top-0 z-20 h-16 flex items-center justify-between px-2 transition-all duration-300 ${
+      className={`fixed top-0 z-40 h-16 flex items-center justify-between px-2 transition-all duration-300 ${
         darkMode
           ? "bg-gray-900 border-b border-gray-700 text-gray-200"
           : "bg-white text-gray-800 border-b border-gray-200"
@@ -314,7 +314,7 @@ export default function TopNavbar() {
             <img
               src={config.profileData.avatar}
               alt={config.profileData.name}
-              className="w-7 h-7 md:w-9 md:h-9 border-1 p-[2px] hover:bg-gray-100  rounded-full"
+              className="w-7 h-7 md:w-9 md:h-9 border-1 p-[2px] hover:bg-gray-100  rounded-full z-50"
             />
             <FiChevronDown size={14} className="hidden md:block" />
           </button>
@@ -332,7 +332,7 @@ export default function TopNavbar() {
               } px-6 py-6 w-72 z-50 transition-all duration-300`}
             >
               {/* Profile Section */}
-              <div className="flex flex-col items-center mb-4">
+              <div className="flex flex-col items-center mb-4 ">
                 <img
                   src={config.profileData.avatar}
                   alt={config.profileData.name}

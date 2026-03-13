@@ -16,7 +16,6 @@ const DashboardProfile = ({ role }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
     const [sideMenuOpen, setSideMenuOpen] = useState(false);
     const [balanceActive, setBalanceActive] = useState(false);
-    const [submenuOpen, setSubmenuOpen] = useState({});
     const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
     const [notificationDropdownOpen, setNotificationDropdownOpen] =
         useState(false);
@@ -116,17 +115,17 @@ const DashboardProfile = ({ role }) => {
                     !showCashInModal &&  // check for Cash-In modal
                     (
                         <div
-                            className="absolute left-10 w-20 h-20 bg-white rounded-full border-2 border-[#fbc02d] flex items-center justify-center shadow-lg z-300"
+                            className="absolute left-10 w-20 h-20 bg-white rounded-full border-2 border-[#fbc02d] flex items-center justify-center shadow-lg z-20"
                             style={{
                                 bottom: "-40px",
                                 clipPath: "none",
-                                overflow: "visible",
+                                overflow: "hidden",
                             }}
                         >
                             <img
                                 src={schoolLogoUrl}
                                 alt="School Logo"
-                                className="w-full h-full object-cover rounded-full z-100"
+                                className="w-full h-full object-cover rounded-full z-10"
                                 onError={(e) => {
                                     e.target.src = sidebarLogo;
                                 }}

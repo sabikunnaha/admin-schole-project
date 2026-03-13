@@ -59,7 +59,7 @@ const DashboardLayout = () => {
                 {shouldShowTopNavbar && <TopNavbar/>}
 
                 <main
-                    className={`flex-1 overflow-y-auto ${shouldShowTopNavbar ? "pt-16" : "pt-0"} pb-2 px-1 md:px-4 ${darkMode
+                    className={`flex-1 overflow-y-auto ${shouldShowTopNavbar ? "pt-16" : "pt-0"} pb-2 px-1.5 md:px-1 ${darkMode
                             ? "bg-gray-800 text-gray-200"
                             : "bg-gray-100 shadow-2xl text-gray-800"
                         }`}
