@@ -7,7 +7,7 @@ import { useSidebar } from "../../contexts/SidebarContext";
 import SidebarItem from "./SidebarItem";
 import ResetModal from "../modal/ResetModal";
 import CashInModal from "../modal/CashInModal";
-import { sidebarMenu } from "../../Data/sidebarMenu";
+import { sidebarMenu } from "../../data/sidebarMenu";
 
 const Sidebar = ({ role }) => {
 

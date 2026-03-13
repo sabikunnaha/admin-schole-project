@@ -2,10 +2,10 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { useTheme } from "../../../contexts/ThemeContext";
-import { feeStatsData } from "../../../Data/schoolData/schoolDashboardData/feeStatsData";
 import { calculateSummary } from "../../../utils/feeUtils";
 import FeeChart from "./FeeChart";
 import FeeSummaryCard from "./FeeSummaryCard";
+import { feeStatsData } from "../../../data/schoolData/schoolDashboardData/feeStatsData";
 
 export default function FeeStatistics() {
     const { darkMode } = useTheme();
