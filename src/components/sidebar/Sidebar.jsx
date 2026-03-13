@@ -4,10 +4,10 @@ import { useLocation } from "react-router-dom";
 import sidebarLogo from "../../assets/images/sidebarLogo.avif"
 import { useTheme } from "../../contexts/ThemeContext";
 import { useSidebar } from "../../contexts/SidebarContext";
-import { sidebarMenu } from "../../Data/sidebarMenu";
 import SidebarItem from "./SidebarItem";
 import ResetModal from "../modal/ResetModal";
 import CashInModal from "../modal/CashInModal";
+import { sidebarMenu } from "../../Data/sidebarMenu";
 
 const Sidebar = ({ role }) => {
 

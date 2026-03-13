@@ -9,30 +9,15 @@ import {
   Settings,
 } from "lucide-react";
 import { FiUsers, FiBell, FiCalendar } from "react-icons/fi";
-import {
-  FaSchool,
-  FaUserTie,
-  FaRegFilePdf,
-  FaUsersSlash,
-} from "react-icons/fa";
-import { FaUsersBetweenLines, FaListCheck } from "react-icons/fa6";
-import { IoExtensionPuzzleOutline } from "react-icons/io5";
 
 import {
-  MdOutlineDashboard,
-  MdOutlineFormatListNumberedRtl,
   MdOutlineInventory2,
-  MdOutlineShoppingBag,
 } from "react-icons/md";
 
-import { BsCalendarDay } from "react-icons/bs";
-
-import { VscCalendar } from "react-icons/vsc";
 import { RiAccountPinBoxLine, RiMoneyDollarCircleLine } from "react-icons/ri";
 
 import { GiBookAura } from "react-icons/gi";
 
-import { SlCalender } from "react-icons/sl";
 import {
   BiReset,
   BiSolidCalendarExclamation,

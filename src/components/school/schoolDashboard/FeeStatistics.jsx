@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { useTheme } from "../../../contexts/ThemeContext";
-import { feeStatsData } from "../../../data/schoolData/schoolDashboardData/FeeStatsData";
+import { feeStatsData } from "../../../Data/schoolData/schoolDashboardData/FeeStatsData";
 import { calculateSummary } from "../../../utils/feeUtils";
 import FeeChart from "./FeeChart";
 import FeeSummaryCard from "./FeeSummaryCard";
