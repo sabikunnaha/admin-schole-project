@@ -5,7 +5,8 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import { calculateSummary } from "../../../utils/feeUtils";
 import FeeChart from "./FeeChart";
 import FeeSummaryCard from "./FeeSummaryCard";
-import { feeStatsData } from "../../../data/schoolData/schoolDashboardData/feeStatsData";
+import { feeStatsData } from "../../../data/schoolData/feeStatsData";
+
 
 export default function FeeStatistics() {
     const { darkMode } = useTheme();
