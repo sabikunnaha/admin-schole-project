@@ -1,6 +1,6 @@
 
 
-export const feeStatsData = {
+export const feeStatData = {
   today: {
     fees: [
       { type: "Tuition", collected: 15000, due: 2000 },

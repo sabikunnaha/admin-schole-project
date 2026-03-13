@@ -10,6 +10,7 @@ import CashInModal from "../modal/CashInModal";
 import { sidebarMenu } from "../../data/sidebarMenu";
 
 
+
 const Sidebar = ({ role }) => {
 
     const { darkMode } = useTheme();

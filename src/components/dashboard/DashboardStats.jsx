@@ -1,12 +1,12 @@
 
-import { dashboardData } from "../../data/dashboardData";
+import { schoolDashboardData } from "../../data/schoolData/schoolDashboardData";
 import { statCardBgColors } from "../../utils/statCardBgColors";
 import StateCard from "../school/schoolDashboard/StateCard";
 
   const DashboardStats= ()=> {
 
   const role = localStorage.getItem("role") || "student";
-  const cards = dashboardData[role] || [];
+  const cards = schoolDashboardData[role] || [];
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">

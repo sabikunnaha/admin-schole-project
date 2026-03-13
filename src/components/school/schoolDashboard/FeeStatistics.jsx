@@ -5,7 +5,9 @@ import { useTheme } from "../../../contexts/ThemeContext";
 import { calculateSummary } from "../../../utils/feeUtils";
 import FeeChart from "./FeeChart";
 import FeeSummaryCard from "./FeeSummaryCard";
-import { feeStatsData } from "../../../data/schoolData/feeStatsData";
+import { feeStatData } from "../../../data/schoolData/feeStatData";
+
+
 
 
 export default function FeeStatistics() {
@@ -16,7 +18,7 @@ export default function FeeStatistics() {
     const [filter, setFilter] = useState("today");
 
     const dropdownRef = useRef(null);
-    const sessionKeys = Object.keys(feeStatsData.session);
+    const sessionKeys = Object.keys(feeStatData.session);
 
     // close dropdown when clicking outside
     useEffect(() => {
@@ -33,9 +35,9 @@ export default function FeeStatistics() {
     // resolve data
     let rawData;
     if (["today", "weekly", "monthly"].includes(filter)) {
-        rawData = feeStatsData[filter];
+        rawData = feeStatData[filter];
     } else if (sessionKeys.includes(filter)) {
-        rawData = feeStatsData.session[filter];
+        rawData = feeStatData.session[filter];
     }
 
     if (!rawData || !rawData.fees) {

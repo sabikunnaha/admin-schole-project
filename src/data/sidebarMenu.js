@@ -6,9 +6,8 @@ import {
   CreditCard,
   ShoppingCart,
   Wallet,
-  Settings,
 } from "lucide-react";
-import { FiUsers, FiBell, FiCalendar } from "react-icons/fi";
+import { FiBell, FiCalendar } from "react-icons/fi";
 
 import {
   MdOutlineInventory2,
