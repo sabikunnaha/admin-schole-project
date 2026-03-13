@@ -81,9 +81,9 @@ export const dashboardData = {
     },
   ],
 
-  school: [
+   school: [
     {
-      title: "Total Classes",
+      title: "Classes",
       value: 45,
       active: 45,
       inactive: 0,
@@ -92,7 +92,7 @@ export const dashboardData = {
       trendData: [45, 45, 45, 45, 45, 45, 45],
     },
     {
-      title: "Total Teachers",
+      title: "Teachers",
       value: 75,
       active: 70,
       inactive: 5,
@@ -101,7 +101,7 @@ export const dashboardData = {
       trendData: [65, 66, 68, 70, 72, 74, 75],
     },
     {
-      title: "Total Students",
+      title: "Students",
       value: 1800,
       active: 1750,
       inactive: 50,
@@ -111,7 +111,25 @@ export const dashboardData = {
     },
   
     {
-      title: "Total Subject",
+      title: "Subject",
+      value: 162,
+      collected: 161,
+      due: 1,
+      icon: "BookOpen",
+      percentage: "+1%",
+      trendData: [150, 152, 155, 158, 160, 161, 162],
+    },
+    {
+      title: "Payroll",
+      value: 162,
+      collected: 161,
+      due: 1,
+      icon: "PiScroll",
+      percentage: "+1%",
+      trendData: [150, 152, 155, 158, 160, 161, 162],
+    },
+    {
+      title: "Expense",
       value: 162,
       collected: 161,
       due: 1,
@@ -120,25 +138,7 @@ export const dashboardData = {
       trendData: [150, 152, 155, 158, 160, 161, 162],
     },
     {
-      title: "Total Payroll",
-      value: 162,
-      collected: 161,
-      due: 1,
-      icon: "DollarSign",
-      percentage: "+1%",
-      trendData: [150, 152, 155, 158, 160, 161, 162],
-    },
-    {
-      title: " Total Expense",
-      value: 162,
-      collected: 161,
-      due: 1,
-      icon: "DollarSign",
-      percentage: "+1%",
-      trendData: [150, 152, 155, 158, 160, 161, 162],
-    },
-    {
-      title: "Total Profit",
+      title: "Profit",
       value: 162,
       collected: 161,
       due: 1,
@@ -165,7 +165,7 @@ export const dashboardData = {
       trendData: [150, 152, 155, 158, 160, 161, 162],
     },
     {
-      title: "Total purchase",
+      title: "purchase",
       value: 162,
       collected: 161,
       due: 1,

@@ -74,9 +74,6 @@ const StateCard=({
           >
             {percentage}
           </span>
-          <span className="text-[8px] text-gray-400 tracking-wide uppercase whitespace-nowrap">
-            in last 7 Days
-          </span>
           <MiniGraph
             data={trendData}
             width={40}

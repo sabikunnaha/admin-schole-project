@@ -17,8 +17,10 @@ import { GiBookAura } from "react-icons/gi";
 import { useTheme } from "../../contexts/ThemeContext";
 import { useSidebar } from "../../contexts/SidebarContext";
 
-const Navbar = () => {
 
+
+export default function TopNavbar() {
+  
   const navigate = useNavigate();
   const location = useLocation();
   const role = localStorage.getItem("role") || "student";
@@ -187,9 +189,10 @@ const Navbar = () => {
 
   const toggleDropdown = (name) =>
     setOpenDropdown(openDropdown === name ? null : name);
-    return (
-         <nav
-      className={`fixed top-0 z-20 h-17 flex items-center justify-between px-10 transition-all duration-300 ${
+
+  return (
+    <nav
+      className={`fixed top-0 z-20 h-16 flex items-center justify-between px-2 transition-all duration-300 ${
         darkMode
           ? "bg-gray-900 border-b border-gray-700 text-gray-200"
           : "bg-white text-gray-800 border-b border-gray-200"
@@ -204,11 +207,7 @@ const Navbar = () => {
         <button className="md:hidden text-xl" onClick={toggleMobileSidebar}>
           ☰
         </button>
-        <img
-          src={roleLogos[role]}
-          alt={`${role} logo`}
-          className="w-8 h-8 md:w-10 md:h-10 mx-8 rounded-full object-contain "
-        />
+  
         <div className="hidden md:flex items-center relative ml-6">
           <FiSearch size={18} className="absolute left-3 text-gray-400" />
           <input
@@ -259,7 +258,7 @@ const Navbar = () => {
                   : "bg-white border border-gray-200 text-gray-700 shadow-lg"
               } px-4 py-4 z-50 w-72 flex flex-col max-h-[80vh] overflow-y-auto`}
             >
-              <div className="font-semibold  text-center mb-3 pb-2">
+              <div className="font-semibold  text-center mb-3  pb-2">
                 Notifications
               </div>
 
@@ -274,7 +273,7 @@ const Navbar = () => {
                       <img
                         src={notif.avatar}
                         alt={notif.name}
-                        className="w-8 h-8 rounded-full object-cover"
+                        className="w-10 h-10 rounded-full object-cover"
                       />
                       <div className="flex flex-col text-left">
                         <span className="font-semibold ">{notif.name}</span>
@@ -300,7 +299,7 @@ const Navbar = () => {
       border rounded-full p-2 hover:bg-gray-100
     "
           >
-            <span className="w-3 h-3 md:w-5 md:h-5 flex items-center justify-center">
+            <span className="w-3 h-3 md:w-4 md:h-4 flex items-center justify-center">
               {item.icon}
             </span>
           </Link>
@@ -310,12 +309,12 @@ const Navbar = () => {
         <div className="relative" onClick={(e) => e.stopPropagation()}>
           <button
             onClick={() => toggleDropdown("profile")}
-            className="flex items-center gap-2"
+            className="flex items-center gap-1"
           >
             <img
               src={config.profileData.avatar}
               alt={config.profileData.name}
-              className="w-7 h-7 md:w-10 md:h-10 border-1 p-[2px] hover:bg-gray-100  rounded-full"
+              className="w-7 h-7 md:w-9 md:h-9 border-1 p-[2px] hover:bg-gray-100  rounded-full"
             />
             <FiChevronDown size={14} className="hidden md:block" />
           </button>
@@ -490,6 +489,4 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

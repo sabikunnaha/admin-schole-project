@@ -9,7 +9,7 @@ import StateCard from "../school/schoolDashboard/StateCard";
   const cards = dashboardData[role] || [];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
 
       {cards.map((item, index) => (
 
@@ -26,3 +26,4 @@ import StateCard from "../school/schoolDashboard/StateCard";
 }
 
 export default DashboardStats;
+

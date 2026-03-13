@@ -1,72 +1,76 @@
-import { useLocation } from "react-router-dom";
+
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { useTheme } from "../contexts/ThemeContext";
-import { useSidebar } from "../contexts/SidebarContext";
-import { useAuth } from "../contexts/AuthContext";
+import { useLocation } from "react-router";
 import Sidebar from "../components/sidebar/Sidebar";
-import Navbar from "../components/navbar/Navbar";
+import { useSidebar } from "../contexts/SidebarContext";
+import TopNavbar from "../components/navbar/TopNavbar";
+import { useTheme } from "../contexts/ThemeContext";
 
-const SIDEBAR_WIDTH = 256;
-const SIDEBAR_COLLAPSED_WIDTH = 80;
 
-export default function DashboardLayout() {
+const DashboardLayout = () => {
 
-  const { darkMode } = useTheme();
-  const { open, hovered } = useSidebar();
-  const { user } = useAuth();
+    // Dark mode implimentation using custom hook
+    const { darkMode } = useTheme();
 
-  const location = useLocation();
+    const { open, hovered } = useSidebar();
+    const isExpanded = open || hovered;
 
-  const role = user?.role;
+    const location = useLocation();
 
-  const isExpanded = open || hovered;
+    const role = localStorage.getItem("role");
 
-  const marginLeft = isExpanded
-    ? SIDEBAR_WIDTH
-    : SIDEBAR_COLLAPSED_WIDTH;
+    // Window width state for responsive margin
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const pathParts = location.pathname.split("/").filter(Boolean);
+    useEffect(() => {
+        function handleResize() {
+            setWindowWidth(window.innerWidth);
+        }
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-  const isDashboardIndexPage =
-    pathParts.length === 2 &&
-    pathParts[0] === role &&
-    pathParts[1] === "dashboard";
+    // Determine marginLeft based on screen size and sidebar state
+    const marginLeft = windowWidth >= 768 ? (isExpanded ? 256 : 80) : 0; // md breakpoint=768px
+    const isMobile = windowWidth < 768;
 
-  const isMobile = window.innerWidth < 768;
+    // Check if current page is dashboard index page
+    const pathParts = location.pathname.split("/").filter(Boolean);
+    const isDashboardIndexPage =
+        pathParts.length === 2 &&
+        pathParts[0] === role &&
+        pathParts[1] === "dashboard";
 
-  const shouldShowTopNavbar =
-    !(isMobile && isDashboardIndexPage);
+    // Show TopNavbar on all pages except mobile dashboard index (which has blue navbar)
+    const shouldShowTopNavbar = !(isMobile && isDashboardIndexPage);
 
-  return (
-    <div className="min-h-screen w-full flex">
+    return (
+        <div className={`min-h-screen w-full `}>
 
-      {/* Sidebar */}
-      <Sidebar role={role} />
+            {/* Sidebar is here */}
+              <Sidebar role={role} />
 
-      {/* Main Area */}
-      <div
-        className="flex flex-col flex-1 transition-all duration-300"
-        style={{
-          marginLeft: window.innerWidth >= 768 ? marginLeft : 0
-        }}
-      >
+            <div
+                className="flex flex-col min-h-screen transition-all duration-300 relative z-10"
+                style={{ marginLeft }}
+            >
+                {/* Show TopNavbar on all pages except mobile dashboard index (blue navbar) */}
+                {shouldShowTopNavbar && <TopNavbar/>}
 
-        {shouldShowTopNavbar && <Navbar/>}
+                <main
+                    className={`flex-1 overflow-y-auto ${shouldShowTopNavbar ? "pt-16" : "pt-0"} pb-2 px-1 md:px-4 ${darkMode
+                            ? "bg-gray-800 text-gray-200"
+                            : "bg-gray-100 shadow-2xl text-gray-800"
+                        }`}
+                >
 
-        <main
-          className={`flex-1 overflow-y-auto ${
-            shouldShowTopNavbar ? "pt-16" : ""
-          } pb-2
-          ${
-            darkMode
-              ? "bg-gray-800 text-gray-200"
-              : "bg-gray-100 text-gray-800"
-          }`}
-        >
-          <Outlet />
-        </main>
+                    {/* Outlet for changeable componant */}
+                    <Outlet />
+                </main>
+            </div>
+        </div>
+    );
+};
 
-      </div>
-    </div>
-  );
-}
+export default DashboardLayout;
