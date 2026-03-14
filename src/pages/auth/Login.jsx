@@ -194,7 +194,7 @@ export default function Login() {
               <p class="px-3 text-sm dark:text-gray-400">Join with us</p>
               <div class="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
             </div>
-            <div className="flex  items-center justify-between mt-4 gap-2">
+            <div className="flex  items-center justify-between mt-4 pb-5 gap-2">
               <div className="text-blue-600 text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border rounded-full ">
                 <FaFacebookF />
               </div>

@@ -3,8 +3,6 @@ import DashboardStats from "../../components/dashboard/DashboardStats";
 import FeeStatistics from "../../components/school/schoolDashboard/FeeStatistics";
 
 
-
-
 const SchoolDashboard = () => {
 
   const role = localStorage.getItem("role") || "student";

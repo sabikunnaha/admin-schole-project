@@ -185,7 +185,7 @@ export default function SidebarItem({
   // ================= WITHOUT CHILDREN =================
   return (
     <NavLink
-      to={`${basePath}/${item.path}`}
+      to={`/${item.path}`}
       end
       className={({ isActive }) => `
         flex items-center

@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { useLocation } from "react-router";
 import Sidebar from "../components/sidebar/Sidebar";
 import { useSidebar } from "../contexts/SidebarContext";
 import TopNavbar from "../components/navbar/TopNavbar";
@@ -16,9 +15,11 @@ const DashboardLayout = () => {
     const { open, hovered } = useSidebar();
     const isExpanded = open || hovered;
 
-    const location = useLocation();
 
     const role = localStorage.getItem("role");
+
+
+
 
     // Window width state for responsive margin
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -36,14 +37,9 @@ const DashboardLayout = () => {
     const isMobile = windowWidth < 768;
 
     // Check if current page is dashboard index page
-    const pathParts = location.pathname.split("/").filter(Boolean);
-    const isDashboardIndexPage =
-        pathParts.length === 2 &&
-        pathParts[0] === role &&
-        pathParts[1] === "dashboard";
 
-    // Show TopNavbar on all pages except mobile dashboard index (which has blue navbar)
-    const shouldShowTopNavbar = !(isMobile && isDashboardIndexPage);
+    // Show TopNavbar on all pages 
+   const shouldShowTopNavbar = true;
 
     return (
         <div className={`min-h-screen w-full `}>

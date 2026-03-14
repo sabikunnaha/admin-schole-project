@@ -30,7 +30,7 @@ const Sidebar = ({ role }) => {
     const menuItems = sidebarMenu(role);
 
     const [showResetModal, setShowResetModal] = useState(false);
-    const [showCashInModal, setShowCashInModal] = useState(false); // ✅ ADD
+    const [showCashInModal, setShowCashInModal] = useState(false); 
     const location = useLocation();
 
     useEffect(() => {
