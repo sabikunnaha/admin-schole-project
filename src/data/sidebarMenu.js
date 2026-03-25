@@ -4,23 +4,22 @@ import {
   UserCog,
   BookOpen,
   CreditCard,
-  ShoppingCart,
   Wallet,
 } from "lucide-react";
+
 import { FiBell, FiCalendar } from "react-icons/fi";
 
 import {
   MdOutlineInventory2,
 } from "react-icons/md";
 
-import { RiAccountPinBoxLine, RiMoneyDollarCircleLine } from "react-icons/ri";
+import { RiAccountPinBoxLine} from "react-icons/ri";
 
 import { GiBookAura } from "react-icons/gi";
 
 import {
   BiReset,
   BiSolidCalendarExclamation,
-  BiSolidSchool,
 } from "react-icons/bi";
 import { RxDashboard } from "react-icons/rx";
 import {

@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
   },
 
 
-//   //school dashboard
+  //school dashboard
 
   {
     path: "/school/dashboard",

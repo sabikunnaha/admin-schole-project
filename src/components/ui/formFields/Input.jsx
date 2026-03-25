@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTheme } from "../../../contexts/ThemeContext";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 export default function Input({
   label,
@@ -75,16 +75,6 @@ export default function Input({
       >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
-
-      {/* Password toggle */}
-      {type === "password" && (
-        <div
-          onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer text-sm"
-        >
-          {showPassword ? <FaEyeSlash /> : <FaEye />}
-        </div>
-      )}
 
       {/* Error */}
       {error && <p className="text-xs text-red-500 mt-1">{error}</p>}

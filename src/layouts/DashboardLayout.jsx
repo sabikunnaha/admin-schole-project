@@ -36,7 +36,6 @@ const DashboardLayout = () => {
     const marginLeft = windowWidth >= 768 ? (isExpanded ? 256 : 80) : 0; // md breakpoint=768px
     const isMobile = windowWidth < 768;
 
-    // Check if current page is dashboard index page
 
     // Show TopNavbar on all pages 
    const shouldShowTopNavbar = true;
@@ -51,7 +50,7 @@ const DashboardLayout = () => {
                 className="flex flex-col min-h-screen transition-all duration-300 relative z-10"
                 style={{ marginLeft }}
             >
-                {/* Show TopNavbar on all pages except mobile dashboard index (blue navbar) */}
+                {/* Show TopNavbar on all pages */}
                 {shouldShowTopNavbar && <TopNavbar/>}
 
                 <main

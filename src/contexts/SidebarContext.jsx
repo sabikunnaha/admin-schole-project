@@ -10,7 +10,6 @@ export function SidebarProvider({ children }) {
   const toggleSidebar = () => setOpen(prev => !prev);
   const toggleMobileSidebar = () => setMobileOpen(prev => !prev);
 
-  // 🔥 IMPORTANT FIX
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {

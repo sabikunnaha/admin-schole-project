@@ -7,7 +7,7 @@ export const ThemeProvider = ({ children }) => {
   // Toggle function
   const toggleTheme = () => setDarkMode(!darkMode);
 
-  // ✅ Add/remove .dark class on <html> when darkMode changes
+  // Add/remove .dark class on <html> when darkMode changes
   useEffect(() => {
     const html = document.documentElement;
     if (darkMode) {

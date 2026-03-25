@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { TfiGallery } from "react-icons/tfi";
 import { useTheme } from "../../../contexts/ThemeContext";
 import Input from "../formFields/Input";

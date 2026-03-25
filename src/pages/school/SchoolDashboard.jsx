@@ -8,7 +8,7 @@ const SchoolDashboard = () => {
   const role = localStorage.getItem("role") || "student";
 
   return (
-    <div className="">
+    <div>
 
       <div className="p-0">
         <DashboardProfile />

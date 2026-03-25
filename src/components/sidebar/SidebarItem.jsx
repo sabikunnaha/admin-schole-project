@@ -8,8 +8,7 @@ export default function SidebarItem({
   item,
   desktopCollapsed,
   forceExpand = false,
-  onResetClick,   // modal
-  onCashInClick,  // modal
+
 }) {
   const location = useLocation();
   const { darkMode } = useTheme();
@@ -114,35 +113,8 @@ export default function SidebarItem({
                 const isReset = path.includes("reset");
                 const isCashIn = path.includes("cash-in") || path.includes("cashin");
 
-                // 🔹 Modal items (Reset / Cash-In)
-                if (isReset || isCashIn) {
-                  return (
-                    <button
-                      key={i}
-                      onClick={() => handleChildClick(sub.path)}
-                      className={`
-                        group relative flex items-center pl-[22px] pr-2 py-[6px]
-                        text-[13px] rounded-md transition
-                        ${darkMode ? "text-gray-300" : "text-gray-700"}
-                        hover:text-blue-600
-                      `}
-                    >
-                      <span
-                        className={`
-                          absolute left-[3px] top-1/2 -translate-y-1/2
-                          w-[6px] h-[6px] rounded-full transition-colors
-                          ${darkMode
-                            ? "bg-gray-500 group-hover:bg-blue-600"
-                            : "bg-gray-400 group-hover:bg-blue-600"
-                          }
-                        `}
-                      />
-                      {sub.title}
-                    </button>
-                  );
-                }
 
-                // 🔹 Normal NavLink items
+                //  Normal NavLink items
                 return (
                   <NavLink
                     key={i}

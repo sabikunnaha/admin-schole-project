@@ -20,10 +20,40 @@ const loginUser = (data) => {
   throw new Error("Invalid ID or Password");
 };
 
+
+
+// ===== DUMMY API FUNCTIONS =====
+
+const sendOtpApi = async (data) => {
+  console.log("Sending OTP to:", data.contact);
+
+  // Dummy OTP
+  const otp = "123456";
+  console.log("Dummy OTP:", otp);
+
+  return true;
+};
+
+const verifyOtpApi = async (otp) => {
+  if (otp === "123456") {
+    return true;
+  }
+  return false;
+};
+
+const resetPasswordApi = async (newPassword) => {
+  console.log("Password reset to:", newPassword);
+  return true;
+};
+
+
+
+
 export default function Login() {
+  
   const navigate = useNavigate();
 
-  const [step, setStep] = useState("login"); // login | forget | otp | reset
+  const [step, setStep] = useState("login");
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ idNumber: "", password: "" });
   const [forgetData, setForgetData] = useState({ idNumber: "", contact: "" });
@@ -34,27 +64,40 @@ export default function Login() {
   const [errors, setErrors] = useState({});
   const [error, setError] = useState("");
 
-  // OTP Timer
+
+
+  // ===== OTP TIMER =====
   useEffect(() => {
     if (step !== "otp" || timer <= 0) return;
-    const interval = setInterval(() => setTimer((t) => t - 1), 1000);
+
+    const interval = setInterval(() => {
+      setTimer((t) => t - 1);
+    }, 1000);
+
     return () => clearInterval(interval);
   }, [step, timer]);
 
+
+
   const togglePassword = () => setShowPassword(!showPassword);
+
+
 
   // ===== LOGIN HANDLER =====
   const handleLogin = async (e) => {
     e.preventDefault();
+
     const tempErrors = {};
     if (!formData.idNumber) tempErrors.idNumber = "ID Number required";
     if (!formData.password) tempErrors.password = "Password required";
+
     setErrors(tempErrors);
+
     if (Object.keys(tempErrors).length > 0) return;
 
     try {
-      // Placeholder: backend call
-      const role = loginUser(formData); // dummy function
+      const role = loginUser(formData);
+
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("role", role);
       localStorage.setItem("dummyID", formData.idNumber);
@@ -62,73 +105,117 @@ export default function Login() {
       alert(`Login Successful ✅ Role: ${role}`);
 
       switch (role) {
-        case "admin": navigate("/admin/dashboard"); break;
-        case "teacher": navigate("/teacher/dashboard"); break;
-        case "school": navigate("/school/dashboard"); break;
-        default: navigate("/student/dashboard");
+        case "admin":
+          navigate("/admin/dashboard");
+          break;
+
+        case "teacher":
+          navigate("/teacher/dashboard");
+          break;
+
+        case "school":
+          navigate("/school/dashboard");
+          break;
+
+        default:
+          navigate("/student/dashboard");
       }
+
     } catch (err) {
       alert(err.message || "Login failed ❌");
     }
   };
 
-  // ===== FORGET / OTP / RESET LOGIC =====
+
+
+  // ===== SEND OTP =====
   const sendOtp = async () => {
+
     if (!forgetData.idNumber || !forgetData.contact) {
       alert("ID Number and Email/Phone required");
       return;
     }
-    // Placeholder API call
+
     await sendOtpApi(forgetData);
+
     setTimer(60);
+
     alert("OTP sent ✅ (check console for dummy OTP)");
+
     setStep("otp");
   };
 
+
+
+  // ===== RESEND OTP =====
   const resendOtp = async () => {
     await sendOtpApi(forgetData);
     setTimer(60);
     alert("OTP resent ✅");
   };
 
+
+
+  // ===== VERIFY OTP =====
   const verifyOtp = async () => {
+
     const valid = await verifyOtpApi(otp);
+
     if (valid) {
       alert("OTP verified ✅");
       setStep("reset");
     } else {
       alert("Invalid OTP ❌");
     }
+
   };
 
+
+
+  // ===== RESET PASSWORD =====
   const handleResetPassword = async () => {
+
     if (!newPassword || !confirmPassword) {
       setError("Both fields are required");
       return;
     }
+
     if (newPassword !== confirmPassword) {
       setError("Passwords do not match");
       return;
     }
+
     if (newPassword.length < 6) {
       setError("Password must be at least 6 characters");
       return;
     }
-    await resetPasswordApi(newPassword); // placeholder
+
+    await resetPasswordApi(newPassword);
+
     alert("Password reset successful ✅");
+
     setStep("login");
   };
 
-  const cardClasses = "bg-white shadow-lg px-10 pt-10 pb-4 animate-fade-in-up relative my-20";
+
+
+  const cardClasses =
+    "bg-white shadow-lg px-10 pt-10 pb-4 animate-fade-in-up relative my-20";
+
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-5">
       <div className="max-w-[400px] w-full">
 
         <div className={cardClasses}>
+
           <FormLogo />
 
-          <h2 className="text-lg font-bold text-gray-600 text-center my-6">Login</h2>
+          <h2 className="text-lg font-bold text-gray-600 text-center my-6">
+            Login
+          </h2>
+
 
           {step === "login" && (
             <LoginStep
@@ -142,6 +229,7 @@ export default function Login() {
             />
           )}
 
+
           {step === "forget" && (
             <ForgetStep
               forgetData={forgetData}
@@ -150,6 +238,7 @@ export default function Login() {
               goToLogin={() => setStep("login")}
             />
           )}
+
 
           {step === "otp" && (
             <OtpStep
@@ -161,6 +250,7 @@ export default function Login() {
               resendOtp={resendOtp}
             />
           )}
+
 
           {step === "reset" && (
             <ResetStep
@@ -176,7 +266,7 @@ export default function Login() {
 
 
 
-          {/* ===== REGISTER LINK ===== */}
+          {/* REGISTER */}
           <p className="w-full max-w-sm mx-auto h-[39px] border border-gray-300 flex items-center justify-center md:text-sm text-xs text-gray-500 mt-6 px-2 text-center">
             Don’t have an account?
             <Link
@@ -187,29 +277,36 @@ export default function Login() {
             </Link>
           </p>
 
-          {/* ===== SOCIAL ===== */}
+
+
+          {/* SOCIAL */}
           <div className="mt-4 text-center">
-            <div class="flex items-center pt-4 space-x-1">
-              <div class="flex-1 h-px sm:w-12 dark:bg-gray-300"></div>
-              <p class="px-3 text-sm dark:text-gray-400">Join with us</p>
-              <div class="flex-1 h-px sm:w-16 dark:bg-gray-300"></div>
+
+            <div className="flex items-center pt-4 space-x-1">
+              <div className="flex-1 h-px sm:w-12 bg-gray-300"></div>
+              <p className="px-3 text-sm text-gray-400">Join with us</p>
+              <div className="flex-1 h-px sm:w-16 bg-gray-300"></div>
             </div>
-            <div className="flex  items-center justify-between mt-4 pb-5 gap-2">
-              <div className="text-blue-600 text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border rounded-full ">
+
+            <div className="flex items-center justify-between mt-4 pb-5 gap-2">
+
+              <div className="text-blue-600 text-2xl p-1 flex justify-center items-center border-gray-200 border rounded-full">
                 <FaFacebookF />
               </div>
-              <div className="text-green-500  text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border rounded-full ">
+
+              <div className="text-green-500 text-2xl p-1 flex justify-center items-center border-gray-200 border rounded-full">
                 <FaWhatsapp />
               </div>
-              <div className="text-gray-700 text-2xl p-1 md:p-1 flex justify-center items-center border-gray-200 border  rounded-full ">
+
+              <div className="text-gray-700 text-2xl p-1 flex justify-center items-center border-gray-200 border rounded-full">
                 <BiSupport />
               </div>
+
             </div>
+
           </div>
 
         </div>
-
-
 
       </div>
     </div>

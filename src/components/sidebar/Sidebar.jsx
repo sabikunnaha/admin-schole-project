@@ -5,10 +5,7 @@ import sidebarLogo from "../../assets/images/sidebarLogo.avif"
 import { useTheme } from "../../contexts/ThemeContext";
 import { useSidebar } from "../../contexts/SidebarContext";
 import SidebarItem from "./SidebarItem";
-import ResetModal from "../modal/ResetModal";
-import CashInModal from "../modal/CashInModal";
 import { sidebarMenu } from "../../data/sidebarMenu";
-
 
 
 const Sidebar = ({ role }) => {
@@ -91,9 +88,6 @@ const Sidebar = ({ role }) => {
                 </div>
             </aside>
 
-            {/* modals */}
-            {showResetModal && <ResetModal onClose={() => setShowResetModal(false)} />}
-            {showCashInModal && <CashInModal onClose={() => setShowCashInModal(false)} />}
         </>
     );
 };
